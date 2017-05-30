@@ -1,0 +1,8 @@
+.club-info {
+    margin: 40px;
+}
+
+.club-info img {
+    border-radius: 10px;
+    max-width: 80%;
+}

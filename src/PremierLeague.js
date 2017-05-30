@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, NavLink } from 'react-router-dom'
-// import ClubInfo from './ClubInfo'
+import ClubInfo from './ClubInfo'
 import './PremierLeague.css'
 
 class PremierLeague extends Component {
@@ -14,7 +14,20 @@ class PremierLeague extends Component {
           <li>
             <NavLink to='/premierLeague/Southampton'>Southampton</NavLink>
           </li>
+          <li>
+            <NavLink to='/premierLeague/Arsenal'>Arsenal</NavLink>
+          </li>
+          <li>
+            <NavLink to='/premierLeague/ManchesterUnited'>Manchester United</NavLink>
+          </li>
         </ul>
+
+        <Route exact path={this.props.match.url} render={() => (
+          <h2>No club selected.</h2>
+        )} />
+        
+        <Route path={`${this.props.match.url}/:club`} component={ClubInfo}/>
+      
       </div>
     )
   }
